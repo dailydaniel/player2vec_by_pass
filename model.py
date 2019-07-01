@@ -24,7 +24,7 @@ class Pass2Vec(nn.Module):
         z2 = self.fc2(z1)
         return z2
 
-def train(model, data, players, player2idx, num_epoch=50):
+def train(model, data, players, player2idx, loss_function, num_epoch=50):
     avg_loss = []
 
     for epoch in range(num_epoch): # tqdm(range(200)):

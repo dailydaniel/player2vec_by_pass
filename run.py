@@ -55,7 +55,8 @@ if __name__ == '__main__':
     loss_function = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-4, weight_decay=1e-5)
 
-    model, avg_loss = train(model, data, players, player2idx, namespace.num_epoch)
+    model, avg_loss = train(model, data, players, player2idx, loss_function,
+                            namespace.num_epoch)
 
     emb = Embedding(model, players_list, player2idx)
 
