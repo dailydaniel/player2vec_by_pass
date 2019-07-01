@@ -11,6 +11,8 @@ from collections import defaultdict, Counter
 import re
 import random
 
+from config import *
+
 def wc_events(events, teams):
     res = []
 
