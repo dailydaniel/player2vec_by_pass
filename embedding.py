@@ -69,7 +69,7 @@ class TeamEmbedding(object):
         return sorted(dd.items(), key=lambda x: -x[1])[:n]
 
 def save(model, emb, team_emb):
-    torch.save(model, 'data/Player2Vec.pth')
+    torch.save(model, 'Data/Player2Vec.pth')
 
     with open('Data/player_emb.pickle', 'wb') as f:
         pickle.dump(emb, f)
