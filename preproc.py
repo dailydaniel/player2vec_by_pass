@@ -10,7 +10,7 @@ from math import sqrt
 from collections import defaultdict, Counter
 import re
 import random
-import pandas as pd 
+import pandas as pd
 
 from config import *
 
@@ -116,7 +116,7 @@ def create_positions_id(pos_classes=pos_classes):
 def make_positions_id(positions, pos2id_classes):
     return {key: pos2id_classes[val] for key, val in positions.items()}
 
-def create_teams(res):
+def create_teams(res, players_list, emb):
     teams = defaultdict(list)
     for match_id in tqdm([x[2] for x in res]):
         match = sb.Events(event_id=match_id)

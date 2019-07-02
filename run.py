@@ -60,7 +60,7 @@ if __name__ == '__main__':
 
     emb = Embedding(model, players_list, player2idx)
 
-    teams, teams_vec = create_teams(res)
+    teams, teams_vec = create_teams(res, players_list, emb)
     team_emb = TeamEmbedding(teams_vec)
 
     save(model, emb, team_emb)

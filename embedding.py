@@ -20,6 +20,8 @@ from matplotlib import collections as mc
 from scipy.spatial import distance
 from math import pi
 
+import pickle
+
 
 def idx2tensor(idx, n):
     x = torch.zeros(n).float()
@@ -36,7 +38,7 @@ class Embedding(object):
     def create_embedding(self, players_list, player2idx):
         with torch.no_grad():
             for player in players_list:
-                self.emb[player] = idx2tensor(player2idx[player], VOCABULARY_SIZE).numpy() @ self.weight
+                self.emb[player] = idx2tensor(player2idx[player], len(players_list)).numpy() @ self.weight
 
     def __getitem__(self, key):
         return self.emb[key]
